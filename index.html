@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio - Vanessa Paiva</title>
+
+<style>
+
+/* Estilizando o menu */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    width: 200px;
+}
+
+li a {
+    display: block;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+/* Alterando a cor do menu ao passar o mouse */
+li a:hover{
+    background-color: grey;
+    color: white;
+}
+
+/* Estilização da página */
+        header{
+        background-color: rgb(224, 218, 218);
+        padding: 20px;
+        border: 0.5px solid rgba(0, 0, 0, 0.252);
+        overflow: hidden;
+        }
+
+        nav{
+        float: left;
+        border: 0.5px solid rgba(0, 0, 0, 0.252);
+        width: 200px;
+        height: 20%; 
+        }
+    
+        section{
+        width: 82.7%;
+        float: center;
+        padding: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.252);
+        margin-left: 200px;
+        display: none; /* Oculta as seções por padrão */
+        }
+
+        /* Para mostrar a seção sobre inicialmente*/
+        #Sobre {
+            display: block; 
+        }
+    </style>
+
+    <script>
+        function mostrarSecao(secaoId) {
+            // Esconde todas as seções
+            var secoes = document.querySelectorAll('section');
+            secoes.forEach(function(secao) {
+                secao.style.display = 'none';
+            });
+
+            // Mostra a seção clicada
+            var secaoSelecionada = document.getElementById(secaoId);
+            secaoSelecionada.style.display = 'block';
+        }
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Portifólio Pessoal</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a onclick="mostrarSecao('Sobre')">Sobre Mim</a></li>
+            <li><a onclick="mostrarSecao('Formacao')">Formação</a></li>
+            <li><a onclick="mostrarSecao('Portifolio')">Portfólio</a></li>
+            <li><a onclick="mostrarSecao('Contato')">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Seção Sobre Mim -->
+    <section id="Sobre">
+        <h1>Sobre Mim</h1>
+        <p>Meu nome é Vanessa Paiva, tenho 29 anos e atualmente moro em São Paulo.</p>
+        <p>Trabalho na Fretebras, uma plataforma de publicações de fretes rodoviários.</p>
+        <p>Aos finais de semana, gosto de conhecer novos lugares e experimentar comidas diferentes.</p>
+    </section>
+
+    <!-- Seção Formação -->
+    <section id="Formacao">
+        <h1>Formação</h1>
+        <p>Sou graduada e mestre em Ciências Econômicas pela UEL.</p>
+        <p>Atualmente estou realizando uma segunda graduação em Análise e Desenvolvimento de Sistemas na Uninter.</p>
+
+    </section>
+
+    <!-- Seção Portfólio -->
+    <section id="Portifolio">
+        <h1>Portfólio</h1>
+        <p>Confira minhas pesquisas no link abaixo:</p>
+        <ul>
+            <li><a href="https://www.researchgate.net/profile/Vanessa-Paiva-2" target="_blank">Minhas publicações</a></li>
+        </ul>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="Contato">
+        <h1>Contato</h1>
+        <p></p>
+        <form>
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="mensagem">Mensagem:</label><br>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+
+</body>
+</html>
